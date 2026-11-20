@@ -1,0 +1,26 @@
+# 생성물
+results/*
+!results/.gitkeep
+*.npy
+*.png
+!docs/**/*.png
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# 편집기 / OS
+.vscode/*
+!.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# 자격증명 — 절대 커밋 금지
+.env
+*.token
+*_secret*

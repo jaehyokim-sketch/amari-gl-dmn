@@ -1,0 +1,27 @@
+# 자격증명 — 절대 커밋 금지 (.env.example 템플릿만 허용)
+.env
+.env*
+!.env.example
+
+# 세션 트랜스크립트 원본 — 대화 전문이 담기므로 API 키 등이 포함될 수 있다.
+# SessionEnd 훅(scripts/save_session_log.py)이 자동 생성한다. 커밋 금지.
+Claude outputs/session-logs/
+
+# 원시 뇌영상 데이터셋(수 GB) — 로컬·Google Drive에만 둔다 (GitHub 100MB 제한)
+*.zip
+Autio_et_al_2020_Z4_LPDP/
+Macaque_Human_Homologs_M9_4mg8Z/
+Macaque_Human_Homologs_M9_4mg8Z (*)/
+
+# 외부 참고 PDF (저작물·대용량) — 공개 저장소에 올리지 않는다
+*.pdf
+
+# Google Drive 동기화 부산물(충돌 사본·바로가기)
+* ([0-9]).*
+*_1.md
+*.gdoc
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/

@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-/d/논문작업/비평형열역학}\" && PYTHONIOENCODING=utf-8 python scripts/save_session_log.py 2>/dev/null || true",
+            "timeout": 60,
+            "statusMessage": "세션 기록 보관 중..."
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"${CLAUDE_PROJECT_DIR:-/d/논문작업/비평형열역학}\" && PYTHONIOENCODING=utf-8 python scripts/load_session_context.py 2>/dev/null || true",
+            "timeout": 30,
+            "statusMessage": "이전 세션 기록 확인 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
